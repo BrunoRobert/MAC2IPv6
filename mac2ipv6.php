@@ -27,7 +27,6 @@ if (isset($_POST['mac']) && $_POST['mac'] != "") {
   // bit flip
   $mac_array[0] = dechex(hexdec($mac_array[0]) ^ 2);
 
-
   // ipv6 zusammensetzen
   $ipv6  = $prefix;
   $ipv6 .= $mac_array[0] . $mac_array[1] . ":" . $mac_array[2] . "ff:fe" . $mac_array[3] . ":" . $mac_array[4] . $mac_array[5];
