@@ -17,7 +17,7 @@
 // Wurde Variable übergeben?
 if (isset($_POST['mac']) && $_POST['mac'] != "") {
  $mac = $_POST['mac'];
- $prefix = "2a01:a380:8408:2000:";
+ $prefix = "2a01:a380:8408:2000:"; // Prefix der Community
 
  $mac_array = explode(":", $mac);
 
@@ -27,7 +27,7 @@ if (isset($_POST['mac']) && $_POST['mac'] != "") {
   // bit flip
   $mac_array[0] = dechex(hexdec($mac_array[0]) ^ 2);
 
-  // ipv6 zusammensetzen
+  // IPv6 zusammensetzen
   $ipv6  = $prefix;
   $ipv6 .= $mac_array[0] . $mac_array[1] . ":" . $mac_array[2] . "ff:fe" . $mac_array[3] . ":" . $mac_array[4] . $mac_array[5];
   $ipv6  = strtolower($ipv6);
